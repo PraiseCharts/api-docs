@@ -3,15 +3,15 @@
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/docs/',
-  onBrokenLinks: 'throw',
+  title: 'PraiseCharts Admin Docs',
+  tagline: 'How to run PraiseCharts',
+  url: 'https://cpanel.praisecharts.com',
+  baseUrl: '/',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'praisecharts', // Usually your GitHub org/user name.
+  projectName: 'admin-docs', // Usually your repo name.
 
   presets: [
     [
@@ -23,7 +23,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           sidebarCollapsed: false,
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          editUrl: 'https://github.com/praisecharts/admin-docs/edit/master/',
         },
         blog: {
           showReadingTime: true,
@@ -63,28 +63,45 @@ const config = {
         title: '',
         logo: {
           alt: 'PraiseCharts',
-          src: 'https://cpanel.praisecharts.com/app/assets/images/materialize-logo3.png',
-          // srcDark: 'https://cdn-assets.praisecharts.com/praisecharts-logo.svg',
+          src: 'https://cdn-assets.praisecharts.com/praisecharts-docs-logo-light.svg',
+          srcDark: 'https://cdn-assets.praisecharts.com/praisecharts-docs-logo.svg',
         },
         items: [
           {
             to: '/',
             position: 'left',
             activeBaseRegex:
-            '.*.docs/$|^/docs/intro|(^/docs/docs/intro)|(^/docs/guides/(examples|with-angular|with-flutter|with-nextjs|with-react|with-redwoodjs|with-svelte|with-vue-3)|^/docs/faq|^/docs/going-into-prod|^/docs/handbook|^/docs/company)',
+            '/$|^/docs/intro',
             label: 'Overview',
           },
           {
-            to: '/docs/guides',
+            to: '/guides',
             position: 'left',
             activeBaseRegex:
-            '^/guides/$',
+            '^/guides/$|^/guides',
             label: 'Guides',
+          },
+          {
+            to: '/reference',
+            position: 'left',
+            activeBaseRegex:
+            '^/reference/$|^/reference',
+            label: 'Reference',
+          },
+          {
+            to: 'https://cpanel.praisecharts.com/app',
+            position: 'left',
+            label: 'Admin Login',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
+            href: 'https://www.praisecharts.com',
+            className: 'navbar-item-praisecharts',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/praisecharts/admin-docs',
-            label: 'GitHub',
+            className: 'navbar-item-github',
             position: 'right',
           },
         ],
@@ -105,16 +122,16 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/praisecharts',
+              },
+              {
+                label: 'Instagram',
+                href: 'https://instagram.com/praisecharts',
+              },
+              {
+                label: 'YouTube',
+                href: 'https://youtube.com/praisechartsvideo',
               },
             ],
           },
@@ -127,12 +144,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/praisecharts/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Sonreign Media, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: require('prism-react-renderer/themes/vsDark'),

@@ -1,36 +1,115 @@
 ---
-sidebar_position: 1
+id: about
+title: Introduction
+description: 'What is Supabase?'
 slug: /
+hide_table_of_contents: true
 ---
 
-# Tutorial Intro
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import Link from '@docusaurus/Link'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+const frameworks = [
+  {
+    name: 'Angular',
+    logo: '/img/libraries/angular-icon.svg',
+    href: '/docs/guides/with-angular',
+  },
+  {
+    name: 'Expo',
+    logo: '/img/libraries/expo-icon.svg',
+    href: 'https://github.com/supabase/supabase/tree/master/examples/expo-todo-list',
+  },
+  { name: 'Flutter', logo: '/img/libraries/dart-icon.svg', href: '/docs/guides/with-flutter' },
+  {
+    name: 'Javascript',
+    logo: '/img/libraries/javascript-icon.svg',
+    href: 'https://github.com/supabase/supabase/tree/master/examples/javascript-auth',
+  },
+  { name: 'Next.js', logo: '/img/libraries/nextjs-icon.svg', href: '/docs/guides/with-nextjs' },
+  { name: 'React', logo: '/img/libraries/react-icon.svg', href: '/docs/guides/with-react' },
+  { name: 'Svelte', logo: '/img/libraries/svelte-icon.svg', href: '/docs/guides/with-svelte' },
+  { name: 'Vue', logo: '/img/libraries/vuejs-icon.svg', href: '/docs/guides/with-vue-3' },
+]
 
-Let's discover **Docusaurus in less than 5 minutes**.
+The goal of this documentation is to become the manual for everything needed to administer PraiseCharts.
 
-## Getting Started
+It provides all the backend services you need to build a product. You can use it completely, or just the services you require:
 
-Get started by **creating a new site**.
+<div class="container" style={{ padding: 0 }}>
+  <div class="row is-multiline">
+    {/* Database */}
+    <div class="col col--6">
+      <Link class="card" to="/docs/guides/database" style={{ height: '100%' }}>
+        <div class="card__body">
+          <h4>Database</h4>
+          <p>A dedicated, scalable Postgres database.</p>
+        </div>
+      </Link>
+    </div>
+    {/* Auth */}
+    <div class="col col--6">
+      <Link class="card" to="/docs/guides/auth" style={{ height: '100%' }}>
+        <div class="card__body">
+          <h4>Auth</h4>
+          <p>User management with Row Level Security.</p>
+        </div>
+      </Link>
+    </div>
+    {/* Auth */}
+    <div class="col col--6">
+      <Link class="card" to="/docs/guides/storage" style={{ height: '100%' }}>
+        <div class="card__body">
+          <h4>File Storage</h4>
+          <p>Store, organize, and serve large files.</p>
+        </div>
+      </Link>
+    </div>
+    {/* API */}
+    <div class="col col--6">
+      <Link class="card" to="/docs/guides/api" style={{ height: '100%' }}>
+        <div class="card__body">
+          <h4>Auto-generated APIs</h4>
+          <p>Instantly generate APIs for your database.</p>
+        </div>
+      </Link>
+    </div>
+  </div>
+</div>
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## How to use these docs
 
-## Generate a new site
+The documentation is divided into 3 sections.
 
-Generate a new Docusaurus site using the **classic template**:
-
-```shell
-npm init docusaurus@latest my-website classic
-```
-
-## Start your site
-
-Run the development server:
-
-```shell
-cd my-website
-
-npx docusaurus start
-```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and displays your changes.
+<div class="container" style={{ padding: 0 }}>
+  <div class="row is-multiline">
+    {/* Overview */}
+    <div class="col col--4">
+      <Link class="card" to="/docs/architecture" style={{ height: '100%' }}>
+        <div class="card__body">
+          <h4>Overview</h4>
+          <p>A summary of the tools and how to get started.</p>
+        </div>
+      </Link>
+    </div>
+    {/* Auth */}
+    <div class="col col--4">
+      <Link class="card" to="/docs/guides" style={{ height: '100%' }}>
+        <div class="card__body">
+          <h4>Guides</h4>
+          <p>In-depth explanations for each tool.</p>
+        </div>
+      </Link>
+    </div>
+    {/* Ref */}
+    <div class="col col--4">
+      <Link class="card" to="/docs/reference/javascript/supabase-client" style={{ height: '100%' }}>
+        <div class="card__body">
+          <h4>Reference Docs</h4>
+          <p>Technical documentation for Systems.</p>
+        </div>
+      </Link>
+    </div>
+  </div>
+</div>
