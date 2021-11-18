@@ -4,5 +4,4 @@ sidebar_position: 2
 
 # Credit Package
 
-Documents are **groups of pages** connected through:
-
+Credit Packages are also Catalog Items. Stick to what a catalog item looks like for an arrangement.

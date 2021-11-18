@@ -196,6 +196,7 @@
   --custom-primary-light: #3593d4;
   --custom-primary-lighter: #3f99d6;
   --custom-primary-lightest: #5da8dd;
+  --custom-content-color-light: #fefefe;
 
   --ifm-footer-background-color: var(--custom-background-color);
   
@@ -386,7 +387,7 @@ li + li {
   color: var(--ifm-color-primary);
 }
 article header {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .hero.is--dark {
@@ -437,6 +438,12 @@ nav.menu {
   color: var(--ifm-color-content);
   display: block;
 }
+:root[data-theme='light'] 
+.navbar-sidebar__items .menu .menu__link {
+  color: var(--ifm-color-content-secondary);
+  display: block;
+}
+
 .navbar-sidebar__items .menu .menu__link .badge {
   border-color: var(--ifm-background-color);
   border-radius: 1em;

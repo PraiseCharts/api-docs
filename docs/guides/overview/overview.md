@@ -17,7 +17,7 @@ Walk throughts for how to complete various tasks in PraiseCharts.
   <div class="row is-multiline">
     {/* Database */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/create-a-catalog-item" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Catalog Management</h4>
           <p>If we can sell it, we can sell it.</p>
@@ -26,7 +26,7 @@ Walk throughts for how to complete various tasks in PraiseCharts.
     </div>
     {/* Auth */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/auth" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Content & Marketing</h4>
           <p>Song lists for days, email builder.</p>
@@ -35,7 +35,7 @@ Walk throughts for how to complete various tasks in PraiseCharts.
     </div>
     {/* Auth */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/storage" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Tags, Labels & People</h4>
           <p>Themes, Title Extensions, Styles</p>
@@ -44,7 +44,7 @@ Walk throughts for how to complete various tasks in PraiseCharts.
     </div>
     {/* API */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/api" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Members & Support</h4>
           <p>Help the people.</p>
@@ -53,7 +53,7 @@ Walk throughts for how to complete various tasks in PraiseCharts.
     </div>
     {/* API */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/api" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Royalties</h4>
           <p>Pay the publishers and arrangers.</p>
@@ -62,7 +62,7 @@ Walk throughts for how to complete various tasks in PraiseCharts.
     </div>
     {/* API */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/api" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Old Admin Tool Help</h4>
           <p>Stuff that got us to where we are.</p>

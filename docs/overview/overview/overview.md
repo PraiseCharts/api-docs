@@ -13,25 +13,40 @@ import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 const frameworks = [
   {
-    name: 'Angular',
-    logo: '/img/libraries/angular-icon.svg',
-    href: '/docs/guides/with-angular',
+    name: 'PraiseCharts.com',
+    logo: '/img/tools/praisecharts.png',
+    href: 'https://www.praisecharts.com',
   },
   {
-    name: 'Expo',
-    logo: '/img/libraries/expo-icon.svg',
-    href: 'https://github.com/supabase/supabase/tree/master/examples/expo-todo-list',
+    name: 'Admin Tool',
+    logo: '/img/tools/cpanel-white.png',
+    href: 'https://cpanel.praisecharts.com/app',
   },
-  { name: 'Flutter', logo: '/img/libraries/dart-icon.svg', href: '/docs/guides/with-flutter' },
   {
-    name: 'Javascript',
-    logo: '/img/libraries/javascript-icon.svg',
-    href: 'https://github.com/supabase/supabase/tree/master/examples/javascript-auth',
+    name: 'Old Admin',
+    logo: '/img/tools/cpanel.png',
+    href: 'https://cpanel.praisecharts.com',
   },
-  { name: 'Next.js', logo: '/img/libraries/nextjs-icon.svg', href: '/docs/guides/with-nextjs' },
-  { name: 'React', logo: '/img/libraries/react-icon.svg', href: '/docs/guides/with-react' },
-  { name: 'Svelte', logo: '/img/libraries/svelte-icon.svg', href: '/docs/guides/with-svelte' },
-  { name: 'Vue', logo: '/img/libraries/vuejs-icon.svg', href: '/docs/guides/with-vue-3' },
+  {
+    name: 'Support Tickets',
+    logo: '/img/tools/support.png',
+    href: 'https://support.praisecharts.com',
+  },
+    {
+    name: 'Metabase (Data)',
+    logo: '/img/tools/metabase.png',
+    href: 'https://data.praisecharts.com',
+  },
+  {
+    name: 'Marketing Emails',
+    logo: '/img/tools/mautic.jpeg',
+    href: 'https://m.praisecharts.com',
+  },
+  {
+    name: 'Basecamp',
+    logo: '/img/tools/basecamp.png',
+    href: 'https://basecamp.com',
+  }
 ]
 
 The goal of this documentation is to become the manual for everything needed to administer PraiseCharts.
@@ -40,7 +55,7 @@ The goal of this documentation is to become the manual for everything needed to 
   <div class="row is-multiline">
     {/* Database */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/create-a-catalog-item" style={{ height: '100%' }}>
+      <Link class="card" to="/guides/create-a-catalog-item" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Catalog Management</h4>
           <p>If we can sell it, we can sell it.</p>
@@ -49,7 +64,7 @@ The goal of this documentation is to become the manual for everything needed to 
     </div>
     {/* Auth */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/auth" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Content & Marketing</h4>
           <p>Song lists for days, email builder.</p>
@@ -58,7 +73,7 @@ The goal of this documentation is to become the manual for everything needed to 
     </div>
     {/* Auth */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/storage" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Tags, Labels & People</h4>
           <p>Themes, Title Extensions, Styles</p>
@@ -67,7 +82,7 @@ The goal of this documentation is to become the manual for everything needed to 
     </div>
     {/* API */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/api" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Members & Support</h4>
           <p>Help the people.</p>
@@ -76,7 +91,7 @@ The goal of this documentation is to become the manual for everything needed to 
     </div>
     {/* API */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/api" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Royalties</h4>
           <p>Pay the publishers and arrangers.</p>
@@ -85,13 +100,37 @@ The goal of this documentation is to become the manual for everything needed to 
     </div>
     {/* API */}
     <div class="col col--6">
-      <Link class="card" to="/docs/guides/api" style={{ height: '100%' }}>
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Old Admin Tool Help</h4>
           <p>Stuff that got us to where we are.</p>
         </div>
       </Link>
     </div>
+  </div>
+</div>
+
+### Links to our tools
+
+<div class="container" style={{ padding: 0 }}>
+  <div class="row is-multiline">
+    {frameworks.map((x) => (
+      <div key={x.name} class="col col--3">
+        <Link class="card" to={x.href}>
+          <div class="card__body" style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+            {x.logo && (
+              <img
+                src={useBaseUrl(x.logo)}
+                alt={x.name}
+                width="20"
+                style={{ display: 'block', maxHeight: 20 }}
+              />
+            )}
+            <h5>{x.name}</h5>
+          </div>
+        </Link>
+      </div>
+    ))}
   </div>
 </div>
 
