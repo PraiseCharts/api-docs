@@ -71,7 +71,7 @@ const config = {
             to: '/',
             position: 'left',
             activeBaseRegex:
-            '/$|^/docs/intro',
+            '^/overview/$|^/ovweview',
             label: 'Overview',
           },
           {
