@@ -5,13 +5,15 @@
 const config = {
   title: 'PraiseCharts Admin Docs',
   tagline: 'How to run PraiseCharts',
-  url: 'https://cpanel.praisecharts.com',
-  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'praisecharts', // Usually your GitHub org/user name.
-  projectName: 'admin-docs', // Usually your repo name.
+  projectName: 'admin-docs',
+  deploymentBranch: 'master',
+  url: 'https://praisecharts-admin-docs.netlify.app',
+  baseUrl: '/',
+  trailingSlash: false,
 
   presets: [
     [
