@@ -1,4 +1,21 @@
-﻿Catalog Item Publish Queue Documentation
+﻿---
+sidebar_position: 5
+---
+
+# Publish a Catalog Item
+
+export const Highlight = ({children, color = '#000', bg}) => (
+  <span
+    style={{
+      backgroundColor: bg,
+      borderRadius: '2px',
+      color: color,
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
 
 Introduction
 
@@ -14,11 +31,11 @@ Background Info
 
 Catalog Items have 5 availability statuses
 
-1. `	`Live (Currently Live)
-1. `	`Live Pending (New changes going live)
-1. `	`Pending (Going live for the first time)
-1. `	`Unpublished (A Draft or newly created Catalog Item)
-1. `	`My PC Only (Was live but is not for sale anymore)
+1. <Highlight bg="#81c784">Live</Highlight> (Currently Live)
+1. <Highlight bg="#fff076">Live Pending</Highlight> (New changes going live) 
+1. <Highlight bg="#64b5f6" color="#f44236">Pending</Highlight> (Going live for the first time)
+1. <Highlight bg="#e0e0e0">Unpublished</Highlight> (A Draft or newly created Catalog Item)
+1. <Highlight bg="#000" color="#fff">My PC Only</Highlight> (Was live but is not for sale anymore)
 
 All Times are displayed in Central Time
 

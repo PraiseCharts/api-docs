@@ -183,6 +183,7 @@
 
   /* Alerts */
   --ifm-alert-color: var(--custom-color-orange-600);
+  --ifm-alert-border-color: var(--custom-primary);
 }
 
 :root[data-theme='light'] {
