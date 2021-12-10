@@ -17,9 +17,12 @@ const config = {
 
   presets: [
     [
-      '@docusaurus/preset-classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      'docusaurus-preset-openapi',
       ({
+        api: {
+          path: 'open-api.yaml',
+          routeBasePath: 'api',
+        },
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
@@ -71,8 +74,8 @@ const config = {
         title: '',
         logo: {
           alt: 'PraiseCharts',
-          src: 'https://cdn-assets.praisecharts.com/praisecharts-docs-logo-light.svg',
-          srcDark: 'https://cdn-assets.praisecharts.com/praisecharts-docs-logo.svg',
+          src: 'https://cdn-assets.praisecharts.com/api-docs-logo.svg',
+          srcDark: 'https://cdn-assets.praisecharts.com/api-docs-logo.svg',
         },
         items: [
           {
@@ -89,18 +92,7 @@ const config = {
             '^/guides/$|^/guides',
             label: 'Guides',
           },
-          {
-            to: '/reference',
-            position: 'left',
-            activeBaseRegex:
-            '^/reference/$|^/reference',
-            label: 'Reference',
-          },
-          {
-            to: 'https://cpanel.praisecharts.com/app',
-            position: 'left',
-            label: 'Admin Login',
-          },
+          { to: "/api", label: "Reference", position: "left" },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://www.praisecharts.com',

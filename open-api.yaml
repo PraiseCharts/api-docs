@@ -1,0 +1,188 @@
+openapi: 3.0.0
+info:
+  version: 5.0.0
+  title: Reference
+  description: |
+    [PraiseCharts](https://www.praisecharts.com) API public endpoints
+  contact:
+    name: PraiseCharts
+    email: developers@praisecharts.com
+    url: 'https://praisecharts.com/'
+  termsOfService: 'https://www.praisecharts.com/company/praisecharts-api-usage-agreement/'
+paths:
+  /oauth/request_token:
+    servers:
+      - url: 'https://www.praisecharts.com/api'
+    post:
+      summary: Request Token
+      tags:
+        - OAuth
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  oauth_token:
+                    type: string
+                    minLength: 1
+                  oauth_token_secret:
+                    type: string
+                    minLength: 1
+                  oauth_callback_confirmed:
+                    type: boolean
+                required:
+                  - oauth_token
+                  - oauth_token_secret
+                  - oauth_callback_confirmed
+              examples:
+                Example Response:
+                  value:
+                    oauth_token: ab079985927a23793f41170194c1b3
+                    oauth_token_secret: 747ce9c680
+                    oauth_callback_confirmed: true
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+          headers: {}
+        '500':
+          description: Internal Server Error
+      description: |-
+        Allows a Consumer application to obtain an OAuth Request Token to request user authorization. 
+
+        This method fulfills Section 6.1 of the OAuth 1.0 authentication flow.
+
+        This request MUST be signed and include the following in the Authorization header
+
+        ```bash
+        OAuth oauth_consumer_key="xvz1evFS4wEEPTGEFPHBog", 
+        oauth_nonce="kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg",
+        oauth_signature="tnnArxj06cWHq44gCs1OSKk%2FjLY%3D",
+        oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1318622958",
+        oauth_version="1.0"
+        ``` 
+
+
+        [See how to create a signature](https://praisecharts.stoplight.io/docs/documentation/docs/Authorization/creating_a_signature.md)
+      parameters:
+        - schema:
+            type: string
+            example: 'OAuth oauth_nonce="K7ny27JTpKVsTgdyLdDfmQQWVLERj2zAK5BslRsqyw", oauth_callback="http%3A%2F%2Fmyapp.com%3A3005%2Ftwitter%2Fprocess_callback", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1300228849", oauth_consumer_key="OqEqJeafRSF11jBMStrZz", oauth_signature="Pc%2BMLdv028fxCErFyi8KXFM%2BddU%3D", oauth_version="1.0"`'
+          in: header
+          name: Authorization
+          required: true
+          description: Signed OAuth string
+      security: []
+  /oauth/authorize:
+    get:
+      servers:
+        - url: 'https://www.praisecharts.com/api'
+      summary: Authorize
+      responses: {}
+      description: |-
+        Allows a Consumer application to use an OAuth Request Token to request user authorization. This method fulfills Section 6.2 of the OAuth 1.0 authentication flow.
+
+        ### Example Request
+        Send the user to the oauth/authorize step in a web browser, including an oauth_token parameter:
+        https://stageapi.praisecharts.com/oauth/authorize?oauth_token=3756b0ec8c0e232123623f761b5017
+      parameters:
+        - schema:
+            type: string
+            example: 3756b0ec8c0e232123623f761b5017
+          in: query
+          name: oauth_token
+          required: true
+          description: unauthorized oauth_token generated from /oauth/request_token
+      security: []
+      tags:
+        - OAuth
+  /oauth/access_token:
+    post:
+      servers:
+        - url: 'https://www.praisecharts.com/api'
+      summary: Access token
+      tags:
+        - OAuth
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  oauth_token:
+                    type: string
+                    minLength: 1
+                  oauth_token_secret:
+                    type: string
+                    minLength: 1
+                required:
+                  - oauth_token
+                  - oauth_token_secret
+              examples:
+                example-1:
+                  value:
+                    oauth_token: asdfasdfadsf
+                    oauth_token_secret: asdfasdfasdf
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: oauth_token
+          description: the authorized request token
+        - schema:
+            type: string
+          in: query
+          name: oauth_verifier
+        - schema:
+            type: string
+            example: 'OAuth oauth_consumer_key="acg", oauth_nonce="c1f9a3b8e83e0fe7d12ff201b0f68089", oauth_signature="jquFmwtxfTM49wddcuAsxjjYa%2fI%3d", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1318622958", oauth_token="3756b0ec8c0e232123623f761b5017", oauth_version="1.0"'
+          in: header
+          name: Authorization
+          required: true
+      description: |-
+        Allows a Consumer application to exchange the OAuth Request Token for an OAuth Access Token. 
+
+        This method fulfills Section 6.3 of the OAuth 1.0 authentication flow.
+
+        This request MUST be signed per [Signing Requests](https://praisecharts.stoplight.io/docs/documentation/docs/Authorization/creating_a_signature.md) and include the following:
+        ```bash
+        OAuth oauth_consumer_key="xvz1evFS4wEEPTGEFPHBog", 
+        oauth_nonce="kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg",
+        oauth_signature="tnnArxj06cWHq44gCs1OSKk%2FjLY%3D",
+        oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1318622958",
+        oauth_token="370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb",
+        oauth_version="1.0"
+        ``` 
+
+
+        [See how to create a signature](https://praisecharts.stoplight.io/docs/documentation/docs/Authorization/creating_a_signature.md)
+      security: []
+servers:
+  - url: 'https://www.praisecharts.com/api/v1.0'
+    description: Prod
+  - url: 'https://stageapi.praisecharts.com'
+    description: Stage
+components:
+  securitySchemes:
+    Authorization:
+      type: http
+      scheme: oauth
+      description: OAuth 1.0a
+  schemas: {}
+tags:
+  - name: Download
+  - name: Search
+  - name: Catalog
+  - name: OAuth
+  - name: Library
+security:
+  - Authorization: []
