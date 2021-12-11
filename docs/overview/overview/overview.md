@@ -1,7 +1,6 @@
 ---
 id: overview
 title: Introduction
-description: 'What is Supabase?'
 hide_table_of_contents: true
 sidebar_position: 1
 slug: /
@@ -53,30 +52,21 @@ The documentation is divided into 3 sections.
 
 <div class="container" style={{ padding: 0 }}>
   <div class="row is-multiline">
-    {/* Overview */}
-    <div class="col col--4">
-      <Link class="card" to="/docs/architecture" style={{ height: '100%' }}>
-        <div class="card__body">
-          <h4>Overview</h4>
-          <p>A summary of the the tools used for PraiseCharts</p>
-        </div>
-      </Link>
-    </div>
-    {/* Auth */}
-    <div class="col col--4">
-      <Link class="card" to="/docs/guides" style={{ height: '100%' }}>
+    {/* Ref */}
+    <div class="col col--6">
+      <Link class="card" to="/guides" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Guides</h4>
-          <p>In-depth explanations for each tool.</p>
+          <p>In-depth explanations.</p>
         </div>
       </Link>
     </div>
     {/* Ref */}
-    <div class="col col--4">
-      <Link class="card" to="/docs/reference/javascript/supabase-client" style={{ height: '100%' }}>
+    <div class="col col--6">
+      <Link class="card" to="/api-docs" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Reference Docs</h4>
-          <p>Technical documentation for Systems and how Data works together.</p>
+          <p>API reference.</p>
         </div>
       </Link>
     </div>

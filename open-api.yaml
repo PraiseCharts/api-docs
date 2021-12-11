@@ -82,7 +82,7 @@ paths:
 
 
         [See how to create a
-        signature](https://praisecharts.stoplight.io/docs/documentation/docs/Authorization/creating_a_signature.md)
+        signature](https://pcapidocs.netlify.app/guides/authorization/key-concepts)
       parameters:
         - schema:
             type: string
@@ -171,7 +171,7 @@ paths:
 
 
         This request MUST be signed per [Signing
-        Requests](https://praisecharts.stoplight.io/docs/documentation/docs/Authorization/creating_a_signature.md)
+        Requests](https://pcapidocs.netlify.app/guides/authorization/key-concepts)
         and include the following:
 
         ```bash
@@ -195,7 +195,7 @@ paths:
 
 
         [See how to create a
-        signature](https://praisecharts.stoplight.io/docs/documentation/docs/Authorization/creating_a_signature.md)
+        signature](https://pcapidocs.netlify.app/guides/authorization/key-concepts)
       security: []
   /library/search:
     get:
