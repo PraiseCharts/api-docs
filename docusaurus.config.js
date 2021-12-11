@@ -21,21 +21,22 @@ const config = {
       ({
         api: {
           path: 'open-api.yaml',
-          routeBasePath: 'api',
+          routeBasePath: 'api-docs',
+          sidebarCollapsed: false,
         },
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           sidebarCollapsed: false,
-          editUrl: 'https://github.com/praisecharts/admin-docs/edit/master/',
+          editUrl: 'https://github.com/praisecharts/api-docs/edit/master/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/main/website/blog/',
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   editUrl:
+        //     'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -92,7 +93,7 @@ const config = {
             '^/guides/$|^/guides',
             label: 'Guides',
           },
-          { to: "/api", label: "Reference", position: "left" },
+          { to: "/api-docs", label: "Reference", position: "left" },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://www.praisecharts.com',

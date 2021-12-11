@@ -49,11 +49,6 @@ const frameworks = [
   }
 ]
 
-The goal of this documentation is to become the manual for everything needed to administer PraiseCharts.
-
-
-## How to use these docs
-
 The documentation is divided into 3 sections.
 
 <div class="container" style={{ padding: 0 }}>
