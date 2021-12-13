@@ -73,7 +73,7 @@
             "description": "Internal Server Error"
           }
         },
-        "description": "Allows a Consumer application to obtain an OAuth Request Token to request user authorization. \n\nThis method fulfills Section 6.1 of the OAuth 1.0 authentication flow.\n\nThis request MUST be signed and include the following in the Authorization header\n\n```bash\nOAuth oauth_consumer_key=\"xvz1evFS4wEEPTGEFPHBog\", \noauth_nonce=\"kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg\",\noauth_signature=\"tnnArxj06cWHq44gCs1OSKk%2FjLY%3D\",\noauth_signature_method=\"HMAC-SHA1\",\noauth_timestamp=\"1318622958\",\noauth_version=\"1.0\"\n``` \n\n\n[See how to create a signature](https://pcapidocs.netlify.app/guides/authorization/key-concepts)",
+        "description": "Allows a Consumer application to obtain an OAuth Request Token to request user authorization. \n\nThis method fulfills Section 6.1 of the OAuth 1.0 authentication flow.\n\nThis request MUST be signed and include the following in the Authorization header\n\n```bash\nOAuth oauth_consumer_key=\"xvz1evFS4wEEPTGEFPHBog\", \noauth_nonce=\"kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg\",\noauth_signature=\"tnnArxj06cWHq44gCs1OSKk%2FjLY%3D\",\noauth_signature_method=\"HMAC-SHA1\",\noauth_timestamp=\"1318622958\",\noauth_version=\"1.0\"\n``` \n\n\n[See how to create a signature](https://developer.praisecharts.com/guides/authorization/key-concepts)",
         "parameters": [
           {
             "schema": {
@@ -172,6 +172,7 @@
     "/library/search": {
       "get": {
         "summary": "Search Library",
+        "description": "[Search Guide](/guides/catalog/search)",
         "tags": [
           "Library"
         ],
@@ -263,6 +264,52 @@
           },
           {
             "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "in": "query",
+            "default": 0,
+            "name": "themes",
+            "required": false,
+            "description": "array of themes"
+          },
+          {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "in": "query",
+            "default": 0,
+            "name": "keys",
+            "required": false,
+            "description": "array of filter_keys"
+          },
+          {
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "default": 10,
+            "name": "limit",
+            "required": false,
+            "description": "Limit"
+          },
+          {
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "default": 0,
+            "name": "from",
+            "required": false,
+            "description": "From"
+          },
+          {
+            "schema": {
               "type": "string"
             },
             "in": "header",
@@ -277,6 +324,7 @@
     "/catalog/search": {
       "get": {
         "summary": "Search Catalog",
+        "description": "[Search Guide](/guides/catalog/search)",
         "tags": [
           "Catalog"
         ],
@@ -321,8 +369,7 @@
         "parameters": [
           {
             "schema": {
-              "type": "string",
-              "example": "OAuth oauth_consumer_key=\"acg\", oauth_nonce=\"c1f9a3b8e83e0fe7d12ff201b0f68089\", oauth_signature=\"jquFmwtxfTM49wddcuAsxjjYa%2fI%3d\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1318622958\", oauth_token=\"3756b0ec8c0e232123623f761b5017\", oauth_version=\"1.0\""
+              "type": "string"
             },
             "in": "query",
             "name": "q",
@@ -331,8 +378,16 @@
           },
           {
             "schema": {
-              "type": "number",
-              "example": "OAuth oauth_consumer_key=\"acg\", oauth_nonce=\"c1f9a3b8e83e0fe7d12ff201b0f68089\", oauth_signature=\"jquFmwtxfTM49wddcuAsxjjYa%2fI%3d\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1318622958\", oauth_token=\"3756b0ec8c0e232123623f761b5017\", oauth_version=\"1.0\""
+              "type": "string"
+            },
+            "in": "query",
+            "name": "product_types[]",
+            "required": false,
+            "description": "Product Types 'sheet_music' || 'audio_tracks' || 'patches'"
+          },
+          {
+            "schema": {
+              "type": "number"
             },
             "in": "query",
             "name": "ccli_number",
@@ -341,8 +396,63 @@
           },
           {
             "schema": {
-              "type": "string",
-              "example": "OAuth oauth_consumer_key=\"acg\", oauth_nonce=\"c1f9a3b8e83e0fe7d12ff201b0f68089\", oauth_signature=\"jquFmwtxfTM49wddcuAsxjjYa%2fI%3d\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1318622958\", oauth_token=\"3756b0ec8c0e232123623f761b5017\", oauth_version=\"1.0\""
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "in": "query",
+            "default": 0,
+            "name": "themes",
+            "required": false,
+            "description": "array of themes"
+          },
+          {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "in": "query",
+            "default": 0,
+            "name": "keys",
+            "required": false,
+            "description": "array of filter_keys"
+          },
+          {
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "default": 10,
+            "name": "limit",
+            "required": false,
+            "description": "Limit"
+          },
+          {
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "default": 0,
+            "name": "from",
+            "required": false,
+            "description": "From"
+          },
+          {
+            "schema": {
+              "type": "boolean"
+            },
+            "in": "query",
+            "name": "include_ownership",
+            "default": false,
+            "required": false,
+            "description": "Blend in ownership data default: false"
+          },
+          {
+            "schema": {
+              "type": "string"
             },
             "in": "header",
             "name": "Authorization",
@@ -370,9 +480,12 @@
           },
           "500": {
             "description": "Invalid OAuth Signature"
+          },
+          "404": {
+            "description": "You do not own this product."
           }
         },
-        "description": ":::danger\nThe download route uses a different Base URL https://api.praisecharts.com/\n:::\n:::tip\nArray paramaters need to be passed in using PHP array syntaxt. ie: ***?key[]=value&?key[]=value***\n::: Hello",
+        "description": ":::danger\nThe download route uses a different Base URL https://api.praisecharts.com/\n:::\n:::tip\nArray paramaters need to be passed in using PHP array syntaxt. ie: ***?key[]=value&?key[]=value***\n::: \n [Download Guide](/guides/download/building-a-download-request)",
         "parameters": [
           {
             "schema": {
@@ -412,6 +525,16 @@
             "name": "key_ids",
             "required": false,
             "description": "Key Ids"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "example": "cc_1col_pdf"
+            },
+            "in": "query",
+            "name": "chordpro_option",
+            "required": false,
+            "description": "default: cc_2col_pdf default"
           }
         ]
       }
@@ -419,6 +542,7 @@
     "/me": {
       "get": {
         "summary": "Account",
+        "description": "Returns an object of the current user's account information",
         "tags": [
           "User"
         ],
@@ -429,7 +553,19 @@
           "500": {
             "description": "Invalid OAuth Signature"
           }
-        }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "example": "OAuth oauth_nonce=\"K7ny27JTpKVsTgdyLdDfmQQWVLERj2zAK5BslRsqyw\", oauth_callback=\"http%3A%2F%2Fmyapp.com%3A3005%2Ftwitter%2Fprocess_callback\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1300228849\", oauth_consumer_key=\"OqEqJeafRSF11jBMStrZz\", oauth_signature=\"Pc%2BMLdv028fxCErFyi8KXFM%2BddU%3D\", oauth_version=\"1.0\"`"
+            },
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "description": "Signed OAuth string"
+          }
+        ]
       }
     }
   },

@@ -50,9 +50,14 @@ const frameworks = [
 
 :::info
 
-These docs are a WIP
+These docs are a WIP. If you have questions reach out to me (isaiah@praisecharts.com) directly
 
 :::
+
+The quickest way to get started is by playing around. Click below to run our api in Insomnia. It is pre-configured with environemnt variables so every route should just work. 
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=PraiseCharts%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2FPraiseCharts%2Fapi-docs%2Fmaster%2FInsomnia_2021-12-13.json)
+
 
 <div class="container" style={{ padding: 0 }}>
   <div class="row is-multiline">

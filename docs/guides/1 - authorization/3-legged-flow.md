@@ -91,7 +91,7 @@ curl --request POST \
 ```
 
 
-[Image Step (F)](#high-level-overview) A successful response contains the oauth_token, oauth_token_secret parameters. The token and token secret should be [stored](https://praisecharts.stoplight.io/docs/documentation/docs/Authorization/key_concepts.md#storing-access-tokens) and used for future authenticated requests to the PraiseCharts API.
+[Image Step (F)](#high-level-overview) A successful response contains the oauth_token, oauth_token_secret parameters. The token and token secret should be [stored](guides/authorization/key-concepts#storing-access-tokens) and used for future authenticated requests to the PraiseCharts API.
  
 *Response includes:*
 ```json
@@ -102,16 +102,6 @@ curl --request POST \
 
 ``` 
 
----
-
-## Up Next
-
-[Image Step (G)](docs/Authorization/3-legged-flow.md#high-level-overview) Now you've obtained the user access tokens; you can use them to access certain APIs such as POST /catalog/search to import files from a User's library.
-
-[Signing Requests](./creating_a_signature.md)
-
-*Check out another awesome resource*
-[Authorizing a request](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/authorizing-a-request)
 
 ---
 ##### Credits
