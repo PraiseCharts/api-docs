@@ -3,15 +3,15 @@
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'PraiseCharts Admin Docs',
-  tagline: 'How to run PraiseCharts',
+  title: 'PraiseCharts Developers',
+  tagline: 'How to run interact with PraiseCharts API',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'praisecharts', // Usually your GitHub org/user name.
-  projectName: 'admin-docs',
+  projectName: 'api-docs',
   deploymentBranch: 'master',
-  url: 'https://praisecharts-admin-docs.netlify.app',
+  url: 'https://developer.praisecharts.com',
   baseUrl: '/',
   trailingSlash: false,
 
@@ -20,8 +20,8 @@ const config = {
       'docusaurus-preset-openapi',
       ({
         api: {
-          path: 'open-api.yaml',
-          routeBasePath: 'api-docs',
+          path: 'openapi.json',
+          routeBasePath: 'api',
           sidebarCollapsed: false,
         },
         docs: {
@@ -90,10 +90,10 @@ const config = {
             to: '/guides',
             position: 'left',
             activeBaseRegex:
-            '^/guides/$|^/guides',
+            '^/guides/$|^/guides|^/guides/(!hidden)',
             label: 'Guides',
           },
-          { to: "/api-docs", label: "Reference", position: "left" },
+          { to: "/api", label: "Reference", position: "left" },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://www.praisecharts.com',
@@ -101,7 +101,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/praisecharts/admin-docs',
+            href: 'https://github.com/praisecharts/api-docs',
             className: 'navbar-item-github',
             position: 'right',
           },
@@ -139,13 +139,13 @@ const config = {
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
+              // {
+              //   label: 'Blog',
+              //   to: '/blog',
+              // },
               {
                 label: 'GitHub',
-                href: 'https://github.com/praisecharts/',
+                href: 'https://github.com/praisecharts/api-docs',
               },
             ],
           },

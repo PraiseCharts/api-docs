@@ -328,6 +328,8 @@ paths:
       security: []
   /download:
     get:
+      servers:
+        - url: https://api.praisecharts.com/v1.0
       summary: Download
       tags:
         - Download
@@ -336,6 +338,19 @@ paths:
           description: Invalid OAuth Signature
         '200':
           description: PDF or Zip file
+      description: >-
+            :::danger
+
+            The download route uses a different Base URL https://api.praisecharts.com/
+
+            :::
+
+            :::tip
+
+            Array paramaters need to be passed in using PHP array syntaxt. ie: ***?key[]=value&?key[]=value***
+
+            :::
+            Hello
       parameters:
         - schema:
             type: array
@@ -347,7 +362,6 @@ paths:
           required: true
           description: >-
             skus
-            ***(PHP Array syntax ?skus[]=73318-5&skus[]=73318-5)***
         - schema:
             type: array
             items:
@@ -379,8 +393,6 @@ paths:
 servers:
   - url: https://www.praisecharts.com/api/v1.0
     description: Prod
-  - url: https://stageapi.praisecharts.com
-    description: Stage
 components:
   securitySchemes:
     Authorization:

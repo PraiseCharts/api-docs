@@ -48,7 +48,11 @@ const frameworks = [
   }
 ]
 
-The documentation is divided into 3 sections.
+:::info
+
+These docs are a WIP
+
+:::
 
 <div class="container" style={{ padding: 0 }}>
   <div class="row is-multiline">

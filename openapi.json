@@ -1,0 +1,477 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "5.0.0",
+    "title": "Reference",
+    "description": "[PraiseCharts](https://www.praisecharts.com) API public endpoints\n",
+    "contact": {
+      "name": "PraiseCharts",
+      "email": "developers@praisecharts.com",
+      "url": "https://praisecharts.com/"
+    },
+    "termsOfService": "https://www.praisecharts.com/company/praisecharts-api-usage-agreement/"
+  },
+  "paths": {
+    "/oauth/request_token": {
+      "servers": [
+        {
+          "url": "https://www.praisecharts.com/api"
+        }
+      ],
+      "post": {
+        "summary": "Request Token",
+        "tags": [
+          "OAuth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "oauth_token": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "oauth_token_secret": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "oauth_callback_confirmed": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "oauth_token",
+                    "oauth_token_secret",
+                    "oauth_callback_confirmed"
+                  ]
+                },
+                "examples": {
+                  "Example Response": {
+                    "value": {
+                      "oauth_token": "ab079985927a23793f41170194c1b3",
+                      "oauth_token_secret": "747ce9c680",
+                      "oauth_callback_confirmed": true
+                    }
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "description": "Allows a Consumer application to obtain an OAuth Request Token to request user authorization. \n\nThis method fulfills Section 6.1 of the OAuth 1.0 authentication flow.\n\nThis request MUST be signed and include the following in the Authorization header\n\n```bash\nOAuth oauth_consumer_key=\"xvz1evFS4wEEPTGEFPHBog\", \noauth_nonce=\"kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg\",\noauth_signature=\"tnnArxj06cWHq44gCs1OSKk%2FjLY%3D\",\noauth_signature_method=\"HMAC-SHA1\",\noauth_timestamp=\"1318622958\",\noauth_version=\"1.0\"\n``` \n\n\n[See how to create a signature](https://pcapidocs.netlify.app/guides/authorization/key-concepts)",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "example": "OAuth oauth_nonce=\"K7ny27JTpKVsTgdyLdDfmQQWVLERj2zAK5BslRsqyw\", oauth_callback=\"http%3A%2F%2Fmyapp.com%3A3005%2Ftwitter%2Fprocess_callback\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1300228849\", oauth_consumer_key=\"OqEqJeafRSF11jBMStrZz\", oauth_signature=\"Pc%2BMLdv028fxCErFyi8KXFM%2BddU%3D\", oauth_version=\"1.0\"`"
+            },
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "description": "Signed OAuth string"
+          }
+        ],
+        "security": []
+      }
+    },
+    "/oauth/authorize": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://www.praisecharts.com/api"
+          }
+        ],
+        "summary": "Authorize",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Allows a Consumer application to use an OAuth Request Token to request user authorization. This method fulfills Section 6.2 of the OAuth 1.0 authentication flow.\n\n### Example Request\nSend the user to the oauth/authorize step in a web browser, including an oauth_token parameter:\nhttps://stageapi.praisecharts.com/oauth/authorize?oauth_token=3756b0ec8c0e232123623f761b5017",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "example": "3756b0ec8c0e232123623f761b5017"
+            },
+            "in": "query",
+            "name": "oauth_token",
+            "required": true,
+            "description": "unauthorized oauth_token generated from /oauth/request_token"
+          }
+        ],
+        "security": [],
+        "tags": [
+          "OAuth"
+        ]
+      }
+    },
+    "/oauth/access_token": {
+      "post": {
+        "servers": [
+          {
+            "url": "https://www.praisecharts.com/api"
+          }
+        ],
+        "summary": "Access token",
+        "tags": [
+          "OAuth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "string",
+                  "properties": {
+                    "oauth_token": {
+                      "type": "string"
+                    },
+                    "oauth_token_secret": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "example": "OAuth oauth_consumer_key=\"acg\", oauth_nonce=\"c1f9a3b8e83e0fe7d12ff201b0f68089\", oauth_signature=\"jquFmwtxfTM49wddcuAsxjjYa%2fI%3d\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1318622958\", oauth_token=\"3756b0ec8c0e232123623f761b5017\", oauth_version=\"1.0\""
+            },
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "description": "Signed OAuth string"
+          }
+        ],
+        "description": "Allows a Consumer application to exchange the OAuth Request Token for an OAuth Access Token. \n\nThis method fulfills Section 6.3 of the OAuth 1.0 authentication flow.\n\nThis request MUST be signed per [Signing Requests](/guides/authorization/creating-a-signature) and include the following:\n```bash\nOAuth oauth_consumer_key=\"xvz1evFS4wEEPTGEFPHBog\", \noauth_nonce=\"kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg\",\noauth_signature=\"tnnArxj06cWHq44gCs1OSKk%2FjLY%3D\",\noauth_signature_method=\"HMAC-SHA1\",\noauth_timestamp=\"1318622958\",\noauth_token=\"370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb\",\noauth_version=\"1.0\"\n``` \n\n\n[See how to create a signature](https://pcapidocs.netlify.app/guides/authorization/key-concepts)",
+        "security": []
+      }
+    },
+    "/library/search": {
+      "get": {
+        "summary": "Search Library",
+        "tags": [
+          "Library"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "in_library": {
+                      "type": "object",
+                      "properties": {
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          }
+                        },
+                        "total": {
+                          "type": "number"
+                        },
+                        "limit": {
+                          "type": "number"
+                        },
+                        "from": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "other_results": {
+                      "type": "object",
+                      "properties": {
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          }
+                        },
+                        "total": {
+                          "type": "number"
+                        },
+                        "limit": {
+                          "type": "number"
+                        },
+                        "from": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Invalid OAuth Signature"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "description": "Search Query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "product_types[]",
+            "required": false,
+            "description": "Product Types 'sheet_music' || 'audio_tracks' || 'patches'"
+          },
+          {
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "name": "ccli_number",
+            "required": false,
+            "description": "CCLI Song \\#"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "description": "Signed OAuth string"
+          }
+        ],
+        "security": []
+      }
+    },
+    "/catalog/search": {
+      "get": {
+        "summary": "Search Catalog",
+        "tags": [
+          "Catalog"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "arrangements": {
+                      "type": "object",
+                      "properties": {
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          }
+                        },
+                        "total": {
+                          "type": "number"
+                        },
+                        "limit": {
+                          "type": "number"
+                        },
+                        "from": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Invalid OAuth Signature"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "example": "OAuth oauth_consumer_key=\"acg\", oauth_nonce=\"c1f9a3b8e83e0fe7d12ff201b0f68089\", oauth_signature=\"jquFmwtxfTM49wddcuAsxjjYa%2fI%3d\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1318622958\", oauth_token=\"3756b0ec8c0e232123623f761b5017\", oauth_version=\"1.0\""
+            },
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "description": "Search Query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "example": "OAuth oauth_consumer_key=\"acg\", oauth_nonce=\"c1f9a3b8e83e0fe7d12ff201b0f68089\", oauth_signature=\"jquFmwtxfTM49wddcuAsxjjYa%2fI%3d\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1318622958\", oauth_token=\"3756b0ec8c0e232123623f761b5017\", oauth_version=\"1.0\""
+            },
+            "in": "query",
+            "name": "ccli_number",
+            "required": false,
+            "description": "CCLI Song \\#"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "example": "OAuth oauth_consumer_key=\"acg\", oauth_nonce=\"c1f9a3b8e83e0fe7d12ff201b0f68089\", oauth_signature=\"jquFmwtxfTM49wddcuAsxjjYa%2fI%3d\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1318622958\", oauth_token=\"3756b0ec8c0e232123623f761b5017\", oauth_version=\"1.0\""
+            },
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "description": "Signed OAuth string"
+          }
+        ],
+        "security": []
+      }
+    },
+    "/download": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://api.praisecharts.com/v1.0"
+          }
+        ],
+        "summary": "Download",
+        "tags": [
+          "Download"
+        ],
+        "responses": {
+          "200": {
+            "description": "PDF or Zip file"
+          },
+          "500": {
+            "description": "Invalid OAuth Signature"
+          }
+        },
+        "description": ":::danger\nThe download route uses a different Base URL https://api.praisecharts.com/\n:::\n:::tip\nArray paramaters need to be passed in using PHP array syntaxt. ie: ***?key[]=value&?key[]=value***\n::: Hello",
+        "parameters": [
+          {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": "73318-F"
+            },
+            "in": "query",
+            "name": "skus",
+            "required": true,
+            "description": "skus"
+          },
+          {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": "73318-F"
+            },
+            "in": "query",
+            "name": "keys",
+            "required": false,
+            "description": "Key Names"
+          },
+          {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": "73318-F"
+            },
+            "in": "query",
+            "name": "key_ids",
+            "required": false,
+            "description": "Key Ids"
+          }
+        ]
+      }
+    },
+    "/me": {
+      "get": {
+        "summary": "Account",
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "User Object"
+          },
+          "500": {
+            "description": "Invalid OAuth Signature"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.praisecharts.com/api/v1.0",
+      "description": "Prod"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "Authorization": {
+        "type": "http",
+        "scheme": "oauth",
+        "description": "OAuth 1.0a"
+      }
+    },
+    "schemas": {}
+  },
+  "tags": [
+    {
+      "name": "OAuth"
+    },
+    {
+      "name": "Search"
+    },
+    {
+      "name": "Catalog"
+    },
+    {
+      "name": "Library"
+    },
+    {
+      "name": "Download"
+    },
+    {
+      "name": "User"
+    }
+  ],
+  "security": [
+    {
+      "Authorization": []
+    }
+  ]
+}

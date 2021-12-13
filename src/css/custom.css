@@ -184,6 +184,7 @@
   /* Alerts */
   --ifm-alert-color: var(--custom-color-orange-600);
   --ifm-alert-border-color: var(--custom-primary);
+  --ifm-color-info-dark: var(--custom-primary-darkest);
 }
 
 :root[data-theme='light'] {

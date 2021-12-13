@@ -1,0 +1,22 @@
+---
+title: Storing a Download Link
+slug: /special/storing-a-download-link
+---
+# A Backdoor for Download Authorization
+
+<head>
+  <meta name="robots" content="noindex"/>
+</head>
+
+
+You can bypass the need for a signed OAuth request on the /v1.0/download route by passing the library_id as a query paramater.
+
+The library_id will be returned as a param from the /oauth/access_token route. You should store this value in your database.
+
+
+Exapmle request for the Lead & Piano/Vocal in C# for the library_id: 3zo248e5v71nnm67m1v9
+```
+https://api.praisecharts.com/v1.0/download?skus%5B%5D=26549-L&keys%5B%5D=C%23&library_id=3zo248e5v71nnm67m1v9
+```
+If you copy and paste this request into your browser, you'll get the file.
+

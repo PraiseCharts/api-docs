@@ -1,5 +1,6 @@
 ---
 tags: [oauth]
+sidebar_position: 3
 ---
 
 # How To Create A Request Signature
@@ -46,7 +47,7 @@ The base string format will always follow this format
 
 `METHOD&REQUEST_URI&PARAMETERS`
 
-Let's create an example for the https://api.praisecharts.com/oauth/request_token endpoint. The request_uri and all the oauth parameters need to be percent encoded and, as per [OAuth 1.0a 9.1.1](https://oauth.net/core/1.0a/#normalize), paramaters should be sorted by name, using lexicographical byte value ordering.... or alphabetical.
+Let's create an example for the https://www.praisecharts.com/api/oauth/request_token endpoint. The request_uri and all the oauth parameters need to be percent encoded and, as per [OAuth 1.0a 9.1.1](https://oauth.net/core/1.0a/#normalize), paramaters should be sorted by name, using lexicographical byte value ordering.... or alphabetical.
  
 Examples in PHP
 
