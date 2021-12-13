@@ -67,7 +67,7 @@ These docs are a WIP
     </div>
     {/* Ref */}
     <div class="col col--6">
-      <Link class="card" to="/api-docs" style={{ height: '100%' }}>
+      <Link class="card" to="/api" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>Reference Docs</h4>
           <p>API reference.</p>
