@@ -970,7 +970,7 @@ a.hash-link {
 }
 
 .prism-code {
-  background-color: none;
+  background-color: var(--ifm-code-background) !important;
   word-break: break-word;
   font-size: 0.8rem;
   outline: none !important;
@@ -1005,11 +1005,11 @@ a.hash-link {
 }
 .token.string {
   font-style: normal !important;
-  color: #24b47e !important;
+  color: #2a87c8 !important;
 }
 .token.console {
   font-style: normal !important;
-  color: #49c1ad !important;
+  color: #2a87c8 !important;
 }
 .token.constant {
   font-style: normal !important;
