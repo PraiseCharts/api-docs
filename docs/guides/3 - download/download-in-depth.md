@@ -9,9 +9,7 @@ sidebar_label: Download In-depth
 
 There are many different ways to use the model to build a download request. Below we will walk through a couple examples.
 
-Below is a stripped down model for a product of an arragement. 
-
-Download request requires a sku and you can obtionally provide a key. If you don't provide a key, all keys will be returned.
+Below is a stripped down model for a product of an arragement. A download request requires a sku and you can optionally provide a key. If you don't provide a key, all keys will be returned.
 
 
 ```

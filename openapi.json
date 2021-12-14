@@ -462,7 +462,7 @@
             "description": "You do not own this product."
           }
         },
-        "description": ":::danger\nThe download route uses a different Base URL https://api.praisecharts.com/\n:::\n:::tip\nArray paramaters need to be passed in using PHP array syntaxt. ie: ***?key[]=value&?key[]=value***\n::: \n [Download Guide](/guides/download/building-a-download-request)",
+        "description": ":::danger\nThe download route uses a different Base URL https://api.praisecharts.com/\n:::\n:::tip\nArray paramaters need to be passed in using PHP array syntaxt. ie: ***?key[]=value&?key[]=value***\n::: \n [Download Guide](/guides/download/bdownload-in-depth)",
         "parameters": [
           {
             "schema": {
