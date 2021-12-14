@@ -50,7 +50,9 @@ const frameworks = [
 
 :::info
 
-These docs are a WIP. If you have questions reach out to me (isaiah@praisecharts.com) directly
+These docs are still a WIP. The basics are covered but there are edge cases not yet fully explained. 
+
+If you have questions  or bump into issues reach out to isaiah@praisecharts.com directly.
 
 :::
 
