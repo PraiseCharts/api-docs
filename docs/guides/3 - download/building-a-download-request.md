@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: Download In-Depth
+sidebar_label: Download In-depth
 ---
 
 # Building a Download Request

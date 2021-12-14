@@ -59,12 +59,6 @@
                     }
                   }
                 }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
               }
             },
             "headers": {}
@@ -85,8 +79,7 @@
             "required": true,
             "description": "Signed OAuth string"
           }
-        ],
-        "security": []
+        ]
       }
     },
     "/oauth/authorize": {
@@ -146,6 +139,9 @@
                     },
                     "oauth_token_secret": {
                       "type": "string"
+                    },
+                    "library_id": {
+                      "type": "string"
                     }
                   }
                 }
@@ -161,12 +157,10 @@
             },
             "in": "header",
             "name": "Authorization",
-            "required": true,
-            "description": "Signed OAuth string"
+            "required": true
           }
         ],
-        "description": "Allows a Consumer application to exchange the OAuth Request Token for an OAuth Access Token. \n\nThis method fulfills Section 6.3 of the OAuth 1.0 authentication flow.\n\nThis request MUST be signed per [Signing Requests](/guides/authorization/creating-a-signature) and include the following:\n```bash\nOAuth oauth_consumer_key=\"xvz1evFS4wEEPTGEFPHBog\", \noauth_nonce=\"kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg\",\noauth_signature=\"tnnArxj06cWHq44gCs1OSKk%2FjLY%3D\",\noauth_signature_method=\"HMAC-SHA1\",\noauth_timestamp=\"1318622958\",\noauth_token=\"370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb\",\noauth_version=\"1.0\"\n``` \n\n\n[See how to create a signature](https://pcapidocs.netlify.app/guides/authorization/key-concepts)",
-        "security": []
+        "description": "Allows a Consumer application to exchange the OAuth Request Token for an OAuth Access Token. \n\nThis method fulfills Section 6.3 of the OAuth 1.0 authentication flow.\n\nThis request MUST be signed per [Signing Requests](/guides/authorization/creating-a-signature) and include the following:\n```bash\nOAuth oauth_consumer_key=\"xvz1evFS4wEEPTGEFPHBog\", \noauth_nonce=\"kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg\",\noauth_signature=\"tnnArxj06cWHq44gCs1OSKk%2FjLY%3D\",\noauth_signature_method=\"HMAC-SHA1\",\noauth_timestamp=\"1318622958\",\noauth_token=\"370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb\",\noauth_version=\"1.0\"\n``` \n\n\n[See how to create a signature](https://pcapidocs.netlify.app/guides/authorization/key-concepts)"
       }
     },
     "/library/search": {
@@ -241,8 +235,7 @@
             },
             "in": "query",
             "name": "q",
-            "required": false,
-            "description": "Search Query"
+            "required": false
           },
           {
             "schema": {
@@ -251,7 +244,7 @@
             "in": "query",
             "name": "product_types[]",
             "required": false,
-            "description": "Product Types 'sheet_music' || 'audio_tracks' || 'patches'"
+            "description": "'sheet_music' || 'audio_tracks' || 'patches'"
           },
           {
             "schema": {
@@ -259,8 +252,7 @@
             },
             "in": "query",
             "name": "ccli_number",
-            "required": false,
-            "description": "CCLI Song \\#"
+            "required": false
           },
           {
             "schema": {
@@ -272,8 +264,7 @@
             "in": "query",
             "default": 0,
             "name": "themes",
-            "required": false,
-            "description": "array of themes"
+            "required": false
           },
           {
             "schema": {
@@ -285,8 +276,7 @@
             "in": "query",
             "default": 0,
             "name": "keys",
-            "required": false,
-            "description": "array of filter_keys"
+            "required": false
           },
           {
             "schema": {
@@ -295,8 +285,7 @@
             "in": "query",
             "default": 10,
             "name": "limit",
-            "required": false,
-            "description": "Limit"
+            "required": false
           },
           {
             "schema": {
@@ -305,8 +294,7 @@
             "in": "query",
             "default": 0,
             "name": "from",
-            "required": false,
-            "description": "From"
+            "required": false
           },
           {
             "schema": {
@@ -314,11 +302,9 @@
             },
             "in": "header",
             "name": "Authorization",
-            "required": true,
-            "description": "Signed OAuth string"
+            "required": true
           }
-        ],
-        "security": []
+        ]
       }
     },
     "/catalog/search": {
@@ -373,8 +359,7 @@
             },
             "in": "query",
             "name": "q",
-            "required": false,
-            "description": "Search Query"
+            "required": false
           },
           {
             "schema": {
@@ -391,8 +376,7 @@
             },
             "in": "query",
             "name": "ccli_number",
-            "required": false,
-            "description": "CCLI Song \\#"
+            "required": false
           },
           {
             "schema": {
@@ -404,8 +388,7 @@
             "in": "query",
             "default": 0,
             "name": "themes",
-            "required": false,
-            "description": "array of themes"
+            "required": false
           },
           {
             "schema": {
@@ -417,8 +400,7 @@
             "in": "query",
             "default": 0,
             "name": "keys",
-            "required": false,
-            "description": "array of filter_keys"
+            "required": false
           },
           {
             "schema": {
@@ -427,8 +409,7 @@
             "in": "query",
             "default": 10,
             "name": "limit",
-            "required": false,
-            "description": "Limit"
+            "required": false
           },
           {
             "schema": {
@@ -437,8 +418,7 @@
             "in": "query",
             "default": 0,
             "name": "from",
-            "required": false,
-            "description": "From"
+            "required": false
           },
           {
             "schema": {
@@ -447,8 +427,7 @@
             "in": "query",
             "name": "include_ownership",
             "default": false,
-            "required": false,
-            "description": "Blend in ownership data default: false"
+            "required": false
           },
           {
             "schema": {
@@ -456,11 +435,9 @@
             },
             "in": "header",
             "name": "Authorization",
-            "required": true,
-            "description": "Signed OAuth string"
+            "required": true
           }
-        ],
-        "security": []
+        ]
       }
     },
     "/download": {
