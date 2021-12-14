@@ -475,7 +475,7 @@
             "in": "query",
             "name": "skus",
             "required": true,
-            "description": "skus"
+            "description": "Download Guide](/guides/download/bdownload-in-depth)"
           },
           {
             "schema": {

@@ -418,6 +418,36 @@ table th {
   margin-bottom: 0.5rem;
 }
 
+
+/* API markdown Tables */
+
+.theme-api-markdown > table > thead > tr > th, .theme-api-markdown > table> tbody > tr > td {
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.theme-api-markdown > table:last-of-type > tbody > tr > td > div:first-child {
+  text-align: right;
+}
+
+.theme-api-markdown > table:last-of-type > tbody > tr > td > div:first-child > div:first-child {
+  width: 2rem;
+}
+
+.theme-api-markdown > table:last-of-type > tbody > tr > td > div:first-child > div:last-child {
+  position:relative;
+  left: 1.5rem;
+  font-weight: bold;
+}
+
+.theme-api-markdown > table:last-of-type  > tbody > tr > td > div:last-child {
+  margin-left: 3rem;
+}
+
+.theme-api-markdown > table:last-of-type  > tbody > tr > td > div:last-child > table > thead {
+  display: none;
+}
+
 /* Sidebar */
 
 .navbar__logo {
