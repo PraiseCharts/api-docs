@@ -4,6 +4,7 @@ title: Introduction
 hide_table_of_contents: true
 sidebar_position: 1
 slug: /
+description: Documentation for the PraiseCharts API
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl'
