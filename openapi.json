@@ -235,16 +235,22 @@
             },
             "in": "query",
             "name": "q",
-            "required": false
+            "required": false,
+            "description": "Your search query. \n\n For accurate results search {song title} {artist name} \n\n The query field searches against title, author names, artist names, album name, themes PCID, CCLI, Product name, and more."
           },
           {
             "schema": {
-              "type": "string"
+              "type": "array",
+              "items" : {
+                "type"  : "string",
+                "enum": [ "sheet_music", "audio_tracks", "patches" ]
+              }
             },
             "in": "query",
-            "name": "product_types[]",
+            "name": "product_types",
             "required": false,
-            "description": "'sheet_music' || 'audio_tracks' || 'patches'"
+            "enum": [ "sheet_music", "audio_tracks", "patches" ],
+            "description": "Will only return products of the specified type. \n\nIf a song matches the query but doesn't have the specified type. items[x].products will be empty. \n\nAllowed values: 'sheet_music'  'audio_tracks'  'patches' \n\n Defaults to all."
           },
           {
             "schema": {
@@ -285,7 +291,8 @@
             "in": "query",
             "default": 10,
             "name": "limit",
-            "required": false
+            "required": false,
+            "description": "The maximum number of results to return in each item type.\n\n Default value:\n10\n\nExample value:\n            20"
           },
           {
             "schema": {
@@ -294,7 +301,8 @@
             "in": "query",
             "default": 0,
             "name": "from",
-            "required": false
+            "required": false,
+            "description": "The index of the first result to return. Use with limit for pagination."
           },
           {
             "schema": {
@@ -462,7 +470,7 @@
             "description": "You do not own this product."
           }
         },
-        "description": ":::danger\nThe download route uses a different Base URL https://api.praisecharts.com/\n:::\n:::tip\nArray paramaters need to be passed in using PHP array syntaxt. ie: ***?key[]=value&?key[]=value***\n::: \n [Download Guide](/guides/download/bdownload-in-depth)",
+        "description": ":::caution\nThe download route uses a different Base URL https://api.praisecharts.com/\n:::\n:::tip\nArray paramaters need to be passed in using PHP array syntaxt. ie: ***?key[]=value&?key[]=value***\n::: \n [Download Guide](/guides/download/bdownload-in-depth)",
         "parameters": [
           {
             "schema": {
@@ -475,7 +483,7 @@
             "in": "query",
             "name": "skus",
             "required": true,
-            "description": "Download Guide](/guides/download/bdownload-in-depth)"
+            "description": ""
           },
           {
             "schema": {

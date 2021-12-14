@@ -65,7 +65,7 @@
     'Arial', sans-serif;
   --custom-font-code: Menlo, monospace;
   --custom-font-size-base: 1rem;
-  --custom-border-radius: 3px;
+  --custom-border-radius: 6px;
   --custom-border-radius-md: 6px;
   --custom-primary-darkest: #1d5f8b;
   --custom-primary-darker: #2473a9;
@@ -373,6 +373,13 @@ li + li {
   font-size: 0.9rem;
 }
 
+:root[data-theme='dark'] .alert.alert--warning {
+  color: var(--custom-color-orange-200);
+  border-color: var(--custom-color-orange-800);
+  background-color: var(--custom-color-orange-800);
+  border-color: var(--custom-color-orange-400);
+}
+
 .navbar__brand strong {
   font-family: var(--ifm-heading-font-family);
   font-size: 1.5rem;
@@ -426,26 +433,37 @@ table th {
   margin-bottom: 0.5rem;
 }
 
+.theme-api-markdown > table > thead > tr > th {
+  font-size: calc(var(--custom-font-size-base) * 1.2);
+}
+
 .theme-api-markdown > table:last-of-type > tbody > tr > td > div:first-child {
   text-align: right;
 }
 
 .theme-api-markdown > table:last-of-type > tbody > tr > td > div:first-child > div:first-child {
-  width: 2rem;
+  width: 2.5rem;
 }
 
 .theme-api-markdown > table:last-of-type > tbody > tr > td > div:first-child > div:last-child {
   position:relative;
-  left: 1.5rem;
+  left: 2rem;
   font-weight: bold;
 }
 
+.theme-api-markdown > table:last-of-type > tbody > tr > td > div:first-child > div:last-child p { font-size: var(--custom-font-size-base) !important;}
+
 .theme-api-markdown > table:last-of-type  > tbody > tr > td > div:last-child {
-  margin-left: 3rem;
+  margin-left: 3.5rem;
 }
 
 .theme-api-markdown > table:last-of-type  > tbody > tr > td > div:last-child > table > thead {
   display: none;
+}
+
+.theme-api-markdown p {
+  font-size: calc(var(--custom-font-size-base) * .9);
+  margin: 0 0 0.4rem;
 }
 
 /* Sidebar */
@@ -1439,8 +1457,13 @@ h4.method-list-item-label .method-list-item-validation {
 .code-block {
   border-radius: 3px;
   font-family: 'office code pro';
-  border: 1px solid var(--custom-border-color);
+  /* border: 1px solid var(--custom-border-color); */
   padding: 2px 6px;
+}
+
+code {
+  border: none;
+  padding: 4px 6px;
 }
 
 details summary:hover {
