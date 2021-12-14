@@ -249,7 +249,6 @@
             "in": "query",
             "name": "product_types",
             "required": false,
-            "enum": [ "sheet_music", "audio_tracks", "patches" ],
             "description": "Will only return products of the specified type. \n\nIf a song matches the query but doesn't have the specified type. items[x].products will be empty. \n\nAllowed values: 'sheet_music'  'audio_tracks'  'patches' \n\n Defaults to all."
           },
           {
@@ -268,7 +267,6 @@
               }
             },
             "in": "query",
-            "default": 0,
             "name": "themes",
             "required": false
           },
@@ -280,7 +278,6 @@
               }
             },
             "in": "query",
-            "default": 0,
             "name": "keys",
             "required": false
           },
@@ -289,7 +286,6 @@
               "type": "number"
             },
             "in": "query",
-            "default": 10,
             "name": "limit",
             "required": false,
             "description": "The maximum number of results to return in each item type.\n\n Default value:\n10\n\nExample value:\n            20"
@@ -299,7 +295,6 @@
               "type": "number"
             },
             "in": "query",
-            "default": 0,
             "name": "from",
             "required": false,
             "description": "The index of the first result to return. Use with limit for pagination."
@@ -394,7 +389,6 @@
               }
             },
             "in": "query",
-            "default": 0,
             "name": "themes",
             "required": false
           },
@@ -406,7 +400,6 @@
               }
             },
             "in": "query",
-            "default": 0,
             "name": "keys",
             "required": false
           },
@@ -415,7 +408,6 @@
               "type": "number"
             },
             "in": "query",
-            "default": 10,
             "name": "limit",
             "required": false
           },
@@ -424,7 +416,6 @@
               "type": "number"
             },
             "in": "query",
-            "default": 0,
             "name": "from",
             "required": false
           },
@@ -434,7 +425,6 @@
             },
             "in": "query",
             "name": "include_ownership",
-            "default": false,
             "required": false
           },
           {
@@ -477,8 +467,7 @@
               "type": "array",
               "items": {
                 "type": "string"
-              },
-              "example": "73318-F"
+              }
             },
             "in": "query",
             "name": "skus",
@@ -490,8 +479,7 @@
               "type": "array",
               "items": {
                 "type": "string"
-              },
-              "example": "73318-F"
+              }
             },
             "in": "query",
             "name": "keys",
@@ -503,8 +491,7 @@
               "type": "array",
               "items": {
                 "type": "string"
-              },
-              "example": "73318-F"
+              }
             },
             "in": "query",
             "name": "key_ids",

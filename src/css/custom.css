@@ -970,7 +970,7 @@ a.hash-link {
 }
 
 .prism-code {
-  background-color: var(--ifm-code-background) !important;
+  background-color: var(--ifm-code-background-dark) !important;
   word-break: break-word;
   font-size: 0.8rem;
   outline: none !important;
