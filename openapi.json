@@ -95,7 +95,7 @@
             "description": "OK"
           }
         },
-        "description": "Allows a Consumer application to use an OAuth Request Token to request user authorization. This method fulfills Section 6.2 of the OAuth 1.0 authentication flow.\n\n### Example Request\nSend the user to the oauth/authorize step in a web browser, including an oauth_token parameter:\nhttps://stageapi.praisecharts.com/oauth/authorize?oauth_token=3756b0ec8c0e232123623f761b5017",
+        "description": "Allows a Consumer application to use an OAuth Request Token to request user authorization. This method fulfills Section 6.2 of the OAuth 1.0 authentication flow.",
         "parameters": [
           {
             "schema": {
