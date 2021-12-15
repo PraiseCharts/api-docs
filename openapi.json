@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "version": "5.0.0",
+    "version": "1.0.0",
     "title": "Reference",
     "description": "[PraiseCharts](https://www.praisecharts.com) API public endpoints\n",
     "contact": {

@@ -57,10 +57,13 @@ If you have questions  or bump into issues reach out to isaiah@praisecharts.com 
 
 :::
 
-The quickest way to get started is by playing around. Click below to run our api in Insomnia. It is pre-configured with environemnt variables so every route should just work. 
+## Quick Start
+
+The quickest way to get started is by playing around. We have collections set up in both Insomnia & Postman with environment variables pre-configured. 
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=PraiseCharts%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2FPraiseCharts%2Fapi-docs%2Fmaster%2FInsomnia_2021-12-13.json)
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/3322692-2221fa52-2d0b-4853-a649-f922ee2208b7?action=collection%2Ffork&collection-url=entityId%3D3322692-2221fa52-2d0b-4853-a649-f922ee2208b7%26entityType%3Dcollection%26workspaceId%3D0a69ee76-89ed-4fbd-85f4-025441b6f03c#?env%5BProduction%5D=W3sia2V5IjoiY29uc3VtZXJfa2V5IiwidmFsdWUiOiIzNjc1NzEwNDVkM2UxMWVjYmY2MzAyNDJhYyIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiY29uc3VtZXJfc2VjcmV0IiwidmFsdWUiOiI5ZDU0MjYyODc3IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJhY2Nlc3NfdG9rZW4iLCJ2YWx1ZSI6ImNjZGExMzUyMjYyMTU3Mjc5MDdjYzk0NGRkYjg1NCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoidG9rZW5fc2VjcmV0IiwidmFsdWUiOiIwZDgzNTVlNjdlIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJsaWJyYXJ5X2lkIiwidmFsdWUiOiIzem04MXY1MTQzd29vMTZuZW83MiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYmFzZV91cmwiLCJ2YWx1ZSI6Imh0dHBzOi8vd3d3LnByYWlzZWNoYXJ0cy5jb20vYXBpIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ2ZXJzaW9uIiwidmFsdWUiOiIvdjEuMCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXBpX3VybCIsInZhbHVlIjoiaHR0cHM6Ly9hcGkucHJhaXNlY2hhcnRzLmNvbSIsImVuYWJsZWQiOnRydWV9XQ==)
 
 <div class="container" style={{ padding: 0 }}>
   <div class="row is-multiline">
