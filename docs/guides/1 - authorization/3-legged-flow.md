@@ -9,7 +9,7 @@ To perform actions on behalf of a PraiseCharts user, you'll need to obtain their
 These tokens do not expire but can be revoked by the user at any time.
 
 ### High Level Overview
-1. Create a request request token with an oauth_callback to your application.
+1. Create a request token with an oauth_callback to your application.
 2. Send the user to the PraiseCharts (Service Provider) authorization endpoint, where the user will authenticate, grant access to the request token, and redirect the user back to your callback URL.
 3. Your callback endpoint will convert the request token into a user access token, which can be used to make authenticated requests to the user’s song library.
 

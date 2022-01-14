@@ -1,0 +1,21 @@
+{
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/docs/guides/4 - purchase/purchase-links.md"
+            ],
+            "config": {
+                "audience": "expert",
+                "dialect": "canadian",
+                "domain": "technical",
+                "emotions": [
+                    "neutral"
+                ],
+                "goals": [
+                    "inform",
+                    "describe"
+                ]
+            }
+        }
+    ]
+}

@@ -58,7 +58,7 @@ use this route
 
 If you happen to own the 14th most popular version of "How Great Thou Art" and you search for "How Great Thou Art", the arrangement that you own would not return on the first page if you were using default pagination numbers.
 
-Catalog Search will eventually support the ability to request multiple types of results like songlists, albums, artist ect. 
+Catalog Search will eventually support the ability to request multiple types of results like songlists, albums, artists etc. 
 
 ```
 {

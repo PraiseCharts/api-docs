@@ -7,9 +7,9 @@ sidebar_label: Download In-depth
 
 ## Sheet Music
 
-There are many different ways to use the model to build a download request. Below we will walk through a couple examples.
+There are many different ways to use the model to build a download request. Below we will walk through a couple of examples.
 
-Below is a stripped down model for a product of an arragement. A download request requires a sku and you can optionally provide a key. If you don't provide a key, all keys will be returned.
+Below is a stripped-down model for a product of an arrangement. A download request requires a SKU and you can optionally provide a key. If you don't provide a key, all keys will be returned.
 
 
 ```
@@ -29,7 +29,7 @@ Below is a stripped down model for a product of an arragement. A download reques
 }
 ```
 
-We can use this data to make a varity of download requests. Notice how you could easily create the same result multiple ways.
+We can use this data to make a variety of download requests. Notice how you could easily create the same result multiple ways.
 
 `/download?skus=73318-L` Returns all parts all keys (parent level)
 
@@ -44,7 +44,7 @@ We can use this data to make a varity of download requests. Notice how you could
 
 ### Chordpro
 
-For chordpro downloads there is also the `chordpro_option` paramater. Use the chordpro_options from the product model to specify a Chord Chart output. 2 column is the default.
+For chordpro downloads, there is also the `chordpro_option` parameter. Use the chordpro_options from the product model to specify a Chord Chart output. 2 column is the default.
 ```
 {
     "cc_text_txt": "Text Chord Chart",
@@ -64,4 +64,4 @@ Audio tracks don't have parts yet. Use the keys at the top level of the product 
 
 ## Patches
 
-Patches don't have parts or keys. Just specify the sku.
+Patches don't have parts or keys. Just specify the SKU.
