@@ -153,14 +153,14 @@
           {
             "schema": {
               "type": "string",
-              "example": "OAuth oauth_consumer_key=\"acg\", oauth_nonce=\"c1f9a3b8e83e0fe7d12ff201b0f68089\", oauth_signature=\"jquFmwtxfTM49wddcuAsxjjYa%2fI%3d\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1318622958\", oauth_token=\"3756b0ec8c0e232123623f761b5017\", oauth_version=\"1.0\""
+              "example": "OAuth oauth_consumer_key=\"acg\", oauth_nonce=\"c1f9a3b8e83e0fe7d12ff201b0f68089\", oauth_signature=\"jquFmwtxfTM49wddcuAsxjjYa%2fI%3d\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1318622958\", oauth_token=\"3756b0ec8c0e232123623f761b5017\", oauth_verifier=\"aa4bf7d3250f45a4eb4549be9fbde8\", oauth_version=\"1.0\""
             },
             "in": "header",
             "name": "Authorization",
             "required": true
           }
         ],
-        "description": "Allows a Consumer application to exchange the OAuth Request Token for an OAuth Access Token. \n\nThis method fulfills Section 6.3 of the OAuth 1.0 authentication flow.\n\nThis request MUST be signed per [Signing Requests](/guides/authorization/creating-a-signature) and include the following:\n```bash\nOAuth oauth_consumer_key=\"xvz1evFS4wEEPTGEFPHBog\", \noauth_nonce=\"kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg\",\noauth_signature=\"tnnArxj06cWHq44gCs1OSKk%2FjLY%3D\",\noauth_signature_method=\"HMAC-SHA1\",\noauth_timestamp=\"1318622958\",\noauth_token=\"370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb\",\noauth_version=\"1.0\"\n``` \n\n\n[See how to create a signature](https://pcapidocs.netlify.app/guides/authorization/key-concepts)"
+        "description": "Allows a Consumer application to exchange the OAuth Request Token for an OAuth Access Token. \n\nThis method fulfills Section 6.3 of the OAuth 1.0 authentication flow.\n\nThis request MUST be signed per [Signing Requests](/guides/authorization/creating-a-signature) and include the following:\n```bash\nOAuth oauth_consumer_key=\"xvz1evFS4wEEPTGEFPHBog\", \noauth_nonce=\"kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg\",\noauth_signature=\"tnnArxj06cWHq44gCs1OSKk%2FjLY%3D\",\noauth_signature_method=\"HMAC-SHA1\",\noauth_timestamp=\"1318622958\",\noauth_token=\"370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb\",\noauth_verifier=\"aa4bf7d3250f45a4eb4549be9fbde8\",\noauth_version=\"1.0\"\n``` \n\n\n[See how to create a signature](https://pcapidocs.netlify.app/guides/authorization/key-concepts)"
       }
     },
     "/library/search": {

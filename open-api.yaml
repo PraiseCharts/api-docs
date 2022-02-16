@@ -188,6 +188,8 @@ paths:
 
         oauth_token="370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb",
 
+        oauth_verifier="IKZeRNtnnArxj06cWHq44gCs1OSKk",
+
         oauth_version="1.0"
 
         ``` 
