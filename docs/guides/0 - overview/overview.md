@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem'
 
 # Guides
 
-Walk throughts for how to complete various tasks in PraiseCharts.
+Walk throughs for how to complete various tasks in PraiseCharts.
 
 <div class="container" style={{ padding: 0 }}>
   <div class="row is-multiline">
