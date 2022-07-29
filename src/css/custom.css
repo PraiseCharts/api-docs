@@ -193,6 +193,7 @@
   --ifm-navbar-background-color: #191919;
   --ifm-navbar-link-hover-color:#fff;
   --ifm-navbar-link-color:#808080;
+  --ifm-font-color-secondary: #808080;
   --ifm-toc-link-color: #808080;
   --custom-primary-darkest: #1d5f8b;
   --custom-primary-darker: #2473a9;
@@ -1488,4 +1489,8 @@ details summary:hover {
 .redocusaurus .menu-content {
   top: 60px !important;
   position: sticky;
+}
+
+.api-content p {
+  color: #aaaaaa;
 }

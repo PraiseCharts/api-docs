@@ -35,14 +35,14 @@ const redocusaurus = [
        */
       theme: {
         sidebar: {
-          backgroundColor: '#171717',
+          // backgroundColor: '#171717',
           activeTextColor: '#2a87c7',
           groupItems: {
-            activeBackgroundColor: '#171717',
+            // activeBackgroundColor: '#171717',
             activeTextColor: '#2a87c7'
           },
           level1Items: {
-            activeBackgroundColor: '#171717',
+            // activeBackgroundColor: '#171717',
             activeTextColor: '#2a87c7'
           },
         }
