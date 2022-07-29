@@ -261,7 +261,7 @@
 html,
 body {
   font-smoothing: antialiased;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -603,15 +603,28 @@ a.card:hover {
 }
 
 /* Sidebar nav header  */
-.menu > .menu__list > .menu__list-item > .menu__link {
+.menu__link--sublist, .menu__list-item-collapsible > .menu__link {
+  margin-left: calc(var(--ifm-menu-link-padding-horizontal) * -1);
+  padding-left: var(--ifm-menu-link-padding-horizontal);
   margin-bottom: 4px;
-  color: gray;
+  color: gray !important;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
+.menu__list-item-collapsible > .menu__link {
+  border-right: none !important;
+}
+
+.menu__list-item-collapsible--active {
+  background-color: transparent;
+}
+
+.menu__list-item-collapsible:hover {
+  background-color: transparent;
+}
 /* Disable click events for large screens  */
 @media (min-width: 997px) {
   .menu > .menu__list > .menu__list-item > .menu__link {
@@ -1468,4 +1481,11 @@ code {
 
 details summary:hover {
   cursor: pointer;
+}
+
+/* redocusaurus */
+
+.redocusaurus .menu-content {
+  top: 60px !important;
+  position: sticky;
 }

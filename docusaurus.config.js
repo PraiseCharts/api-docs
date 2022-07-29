@@ -1,8 +1,58 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+const redocusaurus = [
+  'redocusaurus',
+  {
+    debug: Boolean(process.env.DEBUG || process.env.CI),
+    specs: [
+      {
+        id: 'using-single-yaml',
+        spec: 'openapi.json',
+        route: '/api/',
+        layout: {
+          noFooter: true
+        }
+      },
+    ],
+    theme: {
+      /**
+       * Highlight color for docs
+       */
+      primaryColor: '#2a87c7',
+      primaryColorDark: '#2a87c7',
+
+      /**
+       * Options to pass to redoc
+       * @see https://github.com/redocly/redoc#redoc-options-object
+       */
+      options: { 
+        disableSearch: true, 
+        scrollYOffset: '60'
+      },
+      /**
+       * Options to pass to override RedocThemeObject
+       * @see https://github.com/Redocly/redoc#redoc-theme-object
+       */
+      theme: {
+        sidebar: {
+          backgroundColor: '#171717',
+          activeTextColor: '#2a87c7',
+          groupItems: {
+            activeBackgroundColor: '#171717',
+            activeTextColor: '#2a87c7'
+          },
+          level1Items: {
+            activeBackgroundColor: '#171717',
+            activeTextColor: '#2a87c7'
+          },
+        }
+      },
+    },
+  },
+];
 
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+module.exports = {
   title: 'PraiseCharts Developers',
   tagline: 'How to run interact with PraiseCharts API',
   onBrokenLinks: 'warn',
@@ -17,13 +67,8 @@ const config = {
 
   presets: [
     [
-      'docusaurus-preset-openapi',
+      '@docusaurus/preset-classic',
       ({
-        api: {
-          path: 'openapi.json',
-          routeBasePath: 'api',
-          sidebarCollapsed: false,
-        },
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
@@ -42,6 +87,7 @@ const config = {
         },
       }),
     ],
+    redocusaurus
   ],
 
   plugins: [
@@ -71,7 +117,7 @@ const config = {
         defaultMode: 'dark',
       },
       navbar: {
-        hideOnScroll: true,
+        hideOnScroll: false,
         title: '',
         logo: {
           alt: 'PraiseCharts',
@@ -93,7 +139,7 @@ const config = {
             '^/guides/$|^/guides|^/guides/(!hidden)',
             label: 'Guides',
           },
-          { to: "/api", label: "Reference", position: "left" },
+          { to: "/api/", label: "Reference", position: "left" },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://www.praisecharts.com',
@@ -159,5 +205,3 @@ const config = {
       },
     }),
 };
-
-module.exports = config;
