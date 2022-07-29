@@ -1,4 +1,6 @@
 {
   "label": "Authorization OAuth 1.0a",
-  "position": 2
+  "position": 2,
+  "collapsible": false,
+  "collapsed": false
 }

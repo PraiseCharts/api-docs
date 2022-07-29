@@ -1,8 +1,8 @@
 ---
-id: overview
-title: Introduction
+id: api-agreement
+title: API Agreement
 hide_table_of_contents: true
-sidebar_position: 1
+sidebar_position: 2
 slug: /
 description: Documentation for the PraiseCharts API
 ---

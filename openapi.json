@@ -247,7 +247,7 @@
               }
             },
             "in": "query",
-            "name": "product_types",
+            "name": "product_types[]",
             "required": false,
             "description": "Will only return products of the specified type. \n\nIf a song matches the query but doesn't have the specified type. items[x].products will be empty. \n\nAllowed values: 'sheet_music'  'audio_tracks'  'patches' \n\n Defaults to all."
           },
@@ -267,7 +267,7 @@
               }
             },
             "in": "query",
-            "name": "themes",
+            "name": "themes[]",
             "required": false
           },
           {
@@ -278,8 +278,49 @@
               }
             },
             "in": "query",
-            "name": "keys",
+            "name": "keys[]",
             "required": false
+          },
+          {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "in": "query",
+            "name": "product_codes[]",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "boolean"
+            },
+            "in": "query",
+            "name": "search_lyrics",
+            "required": false,
+            "description": "If true, will apply search term against lyrics as well as other fields. \n\nDefaults to false."
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "exists",
+            "required": false,
+            "description": "Specify a property that must contain a truthy value for the product to be returned. \n\nFor example, if you want to return only products that have a Tempo, you would use exists=details.tempo. \n\nIf the product doesn't have the specified property, it will be excluded from the results."
+          },
+          {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "in": "query",
+            "name": "arr_includes[]",
+            "required": false,
+            "description": "pass in an array of strings that represent what parts of the model you want back. \n\nExample: \n\narr_includes[]='id' \n\narr_includes[]=“details.title' \n\narr_includes[]='details.artists.names' \n\narr_includes[]=“details.album.images.md.url' \n\n Would only return those fields in the response."
           },
           {
             "schema": {
@@ -306,6 +347,84 @@
             "in": "header",
             "name": "Authorization",
             "required": true
+          }
+        ]
+      }
+    },
+    "/library/import-arrangement/{catalog_item_id}": {
+      "get": {
+        "summary": "Import Arrangement",
+        "description": "Get an array of simple objects representing all of the files the user has access to organized by key \n\n[Figma Example](https://www.figma.com/file/H6Dup68l63b32q2m0zPH0R/Import-Experience?node-id=2%3A76)",
+        "tags": [
+          "Library"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "G": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "product_type": {
+                            "type"  : "string",
+                            "enum": [ "sheet_music", "audio_tracks", "patches" ]
+                          },
+                          "file_type": {
+                            "type": "string",
+                            "example": "pdf",
+                            "enum": [ "pdf", "zip", "mp3", "wav"]
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Chord Chart"
+                          },
+                          "download": {
+                            "type": "string",
+                            "example": "https://api.praisecharts.com/v1.0/download?skus[]=73318-W&keys[]=G"
+                          }
+                        }
+                      }
+                    
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Invalid OAuth Signature"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "catalog_item_id",
+            "required": true,
+            "example": "73318",
+            "description": "Catalog Item ID"
+          },
+          {
+            "schema": {
+              "type": "array",
+              "items" : {
+                "type"  : "string",
+                "example": "G"
+              }
+            },
+            "in": "query",
+            "name": "keys[]",
+            "required": false,
+            "description": "Keys"
           }
         ]
       }
@@ -362,16 +481,21 @@
             },
             "in": "query",
             "name": "q",
-            "required": false
+            "required": false,
+            "description": "Your search query. \n\n For accurate results search {song title} {artist name} \n\n The query field searches against title, author names, artist names, album name, themes PCID, CCLI, Product name, and more."
           },
           {
             "schema": {
-              "type": "string"
+              "type": "array",
+              "items" : {
+                "type"  : "string",
+                "enum": [ "sheet_music", "audio_tracks", "patches" ]
+              }
             },
             "in": "query",
             "name": "product_types[]",
             "required": false,
-            "description": "Product Types 'sheet_music' || 'audio_tracks' || 'patches'"
+            "description": "Will only return products of the specified type. \n\nIf a song matches the query but doesn't have the specified type. items[x].products will be empty. \n\nAllowed values: 'sheet_music'  'audio_tracks'  'patches' \n\n Defaults to all."
           },
           {
             "schema": {
@@ -389,7 +513,7 @@
               }
             },
             "in": "query",
-            "name": "themes",
+            "name": "themes[]",
             "required": false
           },
           {
@@ -400,23 +524,18 @@
               }
             },
             "in": "query",
-            "name": "keys",
+            "name": "keys[]",
             "required": false
           },
           {
             "schema": {
-              "type": "number"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "in": "query",
-            "name": "limit",
-            "required": false
-          },
-          {
-            "schema": {
-              "type": "number"
-            },
-            "in": "query",
-            "name": "from",
+            "name": "product_codes[]",
             "required": false
           },
           {
@@ -424,8 +543,48 @@
               "type": "boolean"
             },
             "in": "query",
-            "name": "include_ownership",
-            "required": false
+            "name": "search_lyrics",
+            "required": false,
+            "description": "If true, will apply search term against lyrics as well as other fields. \n\nDefaults to false."
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "exists",
+            "required": false,
+            "description": "Specify a property that must contain a truthy value for the product to be returned. \n\nFor example, if you want to return only products that have a Tempo, you would use exists=details.tempo. \n\nIf the product doesn't have the specified property, it will be excluded from the results."
+          },
+          {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "in": "query",
+            "name": "arr_includes[]",
+            "required": false,
+            "description": "pass in an array of strings that represent what parts of the model you want back. \n\nExample: \n\narr_includes[]='id' \n\narr_includes[]=“details.title' \n\narr_includes[]='details.artists.names' \n\narr_includes[]=“details.album.images.md.url' \n\n Would only return those fields in the response."
+          },
+          {
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "description": "The maximum number of results to return in each item type.\n\n Default value:\n10\n\nExample value:\n            20"
+          },
+          {
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "description": "The index of the first result to return. Use with limit for pagination."
           },
           {
             "schema": {
@@ -460,7 +619,7 @@
             "description": "You do not own this product."
           }
         },
-        "description": ":::caution\nThe download route uses a different Base URL https://api.praisecharts.com/\n:::\n:::tip\nArray paramaters need to be passed in using PHP array syntaxt. ie: ***?key[]=value&?key[]=value***\n::: \n [Download Guide](/guides/download/bdownload-in-depth)",
+        "description": "The download route uses a different Base URL https://api.praisecharts.com/\n\nArray paramaters need to be passed in using PHP array syntaxt. ie: ***?key[]=value&?key[]=value***\n \n [Download Guide](/guides/download/bdownload-in-depth)",
         "parameters": [
           {
             "schema": {
@@ -560,9 +719,6 @@
   "tags": [
     {
       "name": "OAuth"
-    },
-    {
-      "name": "Search"
     },
     {
       "name": "Catalog"
