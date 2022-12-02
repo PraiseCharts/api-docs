@@ -14,7 +14,7 @@ There are two routes you can use to search the catalog.
   <div class="row is-multiline">
     {/* Catalog */}
     <div class="col col--6">
-      <Link class="card" to="/api/search-catalog" style={{ height: '100%' }}>
+      <Link class="card" to="/api#tag/Catalog/paths/~1catalog~1search/get" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>/v1.0/catalog/search</h4>
           <p>Search Catalog</p>
@@ -22,7 +22,7 @@ There are two routes you can use to search the catalog.
       </Link>
     </div>
     <div class="col col--6">
-      <Link class="card" to="/api/search-library" style={{ height: '100%' }}>
+      <Link class="card" to="/api#tag/Library/paths/~1library~1search/get" style={{ height: '100%' }}>
         <div class="card__body">
           <h4>/v1.0/library/search</h4>
           <p>Search user's library</p>
